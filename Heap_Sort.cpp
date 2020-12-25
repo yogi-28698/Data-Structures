@@ -16,10 +16,16 @@ void Max_Heapify(int *a, int index, int heap_size){   //It will Build the max-he
 
 }
 
-void Heap_Sort(int *a, int heap_size) {
+void Build_Max_Heap(int *a, int heap_size) {
 
         for(int i = heap_size/2 - 1; i >= 0; i--)  //Building the Max-Heap
             Max_Heapify(a,i,heap_size);
+
+}
+
+void Heap_Sort(int *a, int heap_size) {
+
+        Build_Max_Heap(a,heap_size);
         int j = 1;                                 //Variable to Decrease the size of Heap by 1 every time after swapping
         for(int i = heap_size-1; i > 0; i--){
             swap(a[0],a[i]);
